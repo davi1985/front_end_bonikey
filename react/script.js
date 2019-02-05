@@ -246,51 +246,134 @@
 //================================
 //** Aula Renderização condicional
 
-class Login extends React.Component {
+// class Login extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//     status: 1
+//   };
+
+//   this.ativar = this.ativar.bind(this);
+//   this.desativar = this.desativar.bind(this);
+//   }
+
+//   ativar() {
+//     this.setState({status:1});
+//   }
+//   desativar() {
+//     this.setState({status:0});
+//   }
+//   render() {
+//     let statusMsg;
+//     let statusBtn;
+
+//     if(this.state.status == 1) {
+//       statusMsg = 'Ativado';
+//       statusBtn = <button onClick={this.desativar}>Desativar</button>
+//     } else {
+//       statusMsg = 'Desativado';
+//       statusBtn = <button onClick={this.ativar}>Ativar</button>
+//     }
+
+//     return (
+//       <div>
+//         <button onClick={this.mostrar}>Mostrar status</button>
+//         <p>Status: {statusMsg}</p>
+//         {statusBtn}
+//       </div>
+//     );
+//   }
+// }
+
+
+// let elemento = (
+//   <div>
+//     <Login />
+//   </div>
+// );
+// ReactDOM.render(
+//   elemento,
+//   document.getElementById("app")
+// );
+
+//========================================================
+//Aula Condição Inline
+
+// class Aviso extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       logado: true
+//     };
+//   }
+
+//   render() {
+//     return (
+//       <div>
+//         {this.state.logado == true &&
+//           <p>Voçê stá logado!</p>
+//         }
+//         {this.state.logado == false &&
+//           <p>Você não está logado!</p>
+//         }
+
+//         {this.state.logado == true ? (
+//           <p>Você está logado...</p>
+//         ) : (
+//           <p>Você NAO está logado...</p>
+//         )}
+//       </div>
+//     );
+//   }
+// }
+
+// let elemento = (
+//   <div>
+//     <Aviso />
+//   </div>
+// );
+
+// ReactDOM.render(
+//   elemento,
+//   document.getElementById("app")
+// );
+//========================================================
+//Aula Listas
+
+class Aviso extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-    status: 1
-  };
-
-  this.ativar = this.ativar.bind(this);
-  this.desativar = this.desativar.bind(this);
+      logado: true
+    };
   }
 
-  ativar() {
-    this.setState({status:1});
-  }
-  desativar() {
-    this.setState({status:0});
-  }
   render() {
-    let statusMsg;
-    let statusBtn;
-
-    if(this.state.status == 1) {
-      statusMsg = 'Ativado';
-      statusBtn = <button onClick={this.desativar}>Desativar</button>
-    } else {
-      statusMsg = 'Desativado';
-      statusBtn = <button onClick={this.ativar}>Ativar</button>
-    }
-
     return (
       <div>
-        <button onClick={this.mostrar}>Mostrar status</button>
-        <p>Status: {statusMsg}</p>
-        {statusBtn}
+        {this.state.logado == true &&
+          <p>Voçê stá logado!</p>
+        }
+        {this.state.logado == false &&
+          <p>Você não está logado!</p>
+        }
+
+        {this.state.logado == true ? (
+          <p>Você está logado...</p>
+        ) : (
+          <p>Você NAO está logado...</p>
+        )}
       </div>
     );
   }
 }
 
-
 let elemento = (
   <div>
-    <Login />
+    <Aviso />
   </div>
 );
+
 ReactDOM.render(
   elemento,
   document.getElementById("app")
